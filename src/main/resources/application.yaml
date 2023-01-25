@@ -1,0 +1,23 @@
+server:
+  port: 80
+spring:
+  application:
+    name: city
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/city
+    username: postgres
+    password: 12345
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: true
+jpa:
+  generate-ddl: false
+  show-sql: false
+  properties:
+    hibernate:
+      ddl-auto: none
+      jdbc:
+        lob:
+          non_contextual_creation: true
+          dialect: org.hibernate.dialect.PostgreSQLDialect
